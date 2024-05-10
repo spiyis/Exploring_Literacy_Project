@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/css_proj.css">
+    <title>World Literacy</title>
+</head>
+
+<style>
+
+    body {
+        border: double transparent 1.5em;
+        border-image: url(images/bookbord3.jpg) 200 round;
+        padding: 0.5em;
+
+    }
+    
+
+    .heading {
+        background-image: url("images/vinshelf.png");
+        padding: 2em;
+        text-align: center;
+    }
+
+    .heading_button {
+        background-color: rgb(163, 179, 169);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 18px;
+    }
+
+    .button_bar {
+        display: inline-block;
+        padding-top: 0em;
+        padding-bottom: 0.5em;
+        
+
+    }
+
+    .line {
+        border-bottom: 2px solid #276548;
+    }
+
+    .map1 {
+        background-color: rgb(228, 201, 211);
+        text-align: left;
+        padding-left: 1em;
+        
+    }
+
+    .USMap {
+        background-color: rgb(233, 204, 206);
+        padding: 1em;
+        text-align: left;        
+    }
+
+    .bars {
+        background-color: rgb(242, 224, 240);
+        padding: 1em;
+        text-align: left;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }   
+
+    .center_small {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: 20%;
+    }
+
+    .left {
+        display: block;
+        margin-left: 2%;
+        margin-right: auto;
+        width: 75%;  
+    }
+
+    .scatterplots {
+        background-color:rgb(240, 224, 225);
+        text-align: left;
+        padding: 1em;
+        display: flex;
+        
+    }
+
+    .scatter {
+        width: 600px;
+        height: auto;
+        
+    }
+
+    .time {
+        background-color: rgb(232, 204, 214);   
+    }
+
+    .conclusions {
+        background-color:rgb(191, 207, 197);
+        text-align: left;
+        padding: 1em;
+        display: flex;
+    }
+
+    .bookshelf {
+        width: 160px;
+        height: auto;    
+        margin: 0 15px 0 0;
+        padding-left: 1em;
+        
+        }
+    
+</style>
+
+<body>
+    <div class = "heading">
+        <b><font size = "+3" font color = "white">World Literacy </font>
+    </b>
+    <hr>
+    <div class = "button_bar">
+        <a style="text-decoration:none" href="Proj1.html">
+            <button div class = "heading_button">Homepage</button>
+        </a>
+        <a style = "text-decoration:none" href="literacy.html">
+            <button div class = "heading_button">Explore World Literacy</button>
+        </a>
+        <a style = "text-decoration:none" href = "goodreads.html">
+            <button div class = "heading_button"> Explore Goodreads Reviews </button>
+        </a>
+        <a style = "text-decoration:none" href = "aboutpage.html">
+            <button div class = "heading_button"> About the Project </button>
+        </a>
+    </div>
+
+    <div class = "map1">
+        <br>
+        The map below showcases the total population (ages 15+) literacy rate per country in 2010-2018. Literacy varies greatly country-to-country, with 
+        South Sudan having the lowest literacy rate of 34.52% in 2018. <br><br>
+
+        <i>Looking for data on the United States? Scroll farther below for a detailed map of state-by-state data.</i>
+        <br><br>
+        <div class='center' id='viz1714245166577' style='position: relative'><noscript><a href='#'><img alt='World Literacy ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;FinalMapCopy&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Map_and_Scatter_CORRECT&#47;FinalMapCopy' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;FinalMapCopy&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714245166577');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>        
+    </div>
+    <hr>
+    <div class = 'USMap'>
+        This map showcases United States' literacy rates in 2023. With the exception of New York, the lowest literacy rates are concentrated in the southern half of the country. <br><br>
+        <font color = "#365859">The national average literacy rate is 80.7%</font>
+        <br><br>
+        <div class='center' id='viz1714245768746' style='position: relative'><noscript><a href='#'><img alt='United States Literacy 2023 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;US_Literacy&#47;US_Literacy&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='US_Literacy&#47;US_Literacy' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;US_Literacy&#47;US_Literacy&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714245768746');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <hr>
+    <div class = 'bars'>
+        Select one country (or multiple countries) to explore female literacy versus male literacy. <br><br>
+        <i>Curious about overall trends? Scroll below!</i><br><br>
+        <div class='center' id='viz1714248662279' style='position: relative'><noscript><a href='#'><img alt='Exploring Gender Disparity: Many countries, even with high total literacy rates, have more literate men than women. ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;Gender_All&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Map_and_Scatter_CORRECT&#47;Gender_All' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;Gender_All&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714248662279');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <hr>
+    <div class = 'scatterplots'>
+        <img class = "scatter" src="images/scatter.png" alt = "Goodreads Age Demographics">
+        <div class='center_small' id='viz1714250405711' style='position: relative'><noscript><a href='#'><img alt='Country Spotlight: ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;CountrySpotlight_2018&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Map_and_Scatter_CORRECT&#47;CountrySpotlight_2018' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;CountrySpotlight_2018&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714250405711');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class = 'scatterplots'>
+        <font color = "#365859">The three countries highlighted have the lowest total literacy rates, and all have significantly less literate women than men.</font><br>
+    </div>
+    <hr>
+    <div class = "time">
+        <br><font color ="#365859"><b>A Positive: Despite significant disparities in male and female literacy world-wide, year-by-year literacy is improving for both men and women...</b></font><br><br>
+        <div class='center' id='viz1714252376125' style='position: relative'><noscript><a href='https:&#47;&#47;20145767-atari-embeds.googleusercontent.com&#47;'><img alt='Male &amp; Female Literacy Rates By Country Per Year   ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;GenderByCountryYear&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Map_and_Scatter_CORRECT&#47;GenderByCountryYear' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;Map_and_Scatter_CORRECT&#47;GenderByCountryYear&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /><param name='increment_view_count' value='no' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714252376125');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <hr>
+    <div class = 'conclusions'>
+        <br><font size = "+2"><b>Overall Conclusions:</b></font><br><br>
+    </div>
+    <div class = "conclusions">
+        <img class = "bookshelf" src="images/open_book.png" alt = "Bookshelf">
+        <ul>
+        <li>Population literacy varies greatly country-to-country worldwide, where the countries with the lowest total literacy rates tend to have a higher rate of literate males than females.</li> 
+        <br><br>
+        <li>Literacy also varies greatly within the United States. The southern half of the country tends to have lower literacy rates than the northern half.</li>
+        <br><br>
+        <li>Literacy is improving for men and women world-wide.</li>
+        </ul>
+    </div>

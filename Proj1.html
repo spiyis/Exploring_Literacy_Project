@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/css_proj.css">
+    <title>Exploring Literacy</title>
+</head>
+
+<style>
+
+    body {
+        border: double transparent 1.5em;
+        border-image: url(images/bookbord3.jpg) 200 round;
+        padding: 0.5em;
+
+    }
+    .bookshelf {
+        width: 150px;
+        height: auto;
+        float: left;    
+        margin: 0 15px 0 0;
+        padding-left: 1em;
+        padding-top: 1em;
+        }
+    
+
+    .heading {
+        background-image: url("images/vinshelf.png");
+        padding: 2em;
+        text-align: center;
+    }
+
+    
+    .heading_button {
+        background-color: rgb(163, 179, 169);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 18px;
+    }
+
+    .button_bar {
+        display: inline-block;
+        padding-top: 0em;
+        padding-bottom: 0.5em;
+       
+
+    }
+
+    .line {
+        border-bottom: 2px solid #276548;
+    }
+
+    .introduction {
+        background-color: rgb(233, 204, 206);
+        text-align: left;
+        padding: 1em;
+    }
+    .age_dem {
+        padding-top: 1em;
+        padding-right: 2em;
+        width: 500px;
+        height: auto;
+        float: right;
+        }
+
+    .countries {
+        padding-top: 2em;
+        padding-right: 2em;
+        float: right;
+    }
+
+    .project_inspo {
+        background-color:rgb(231, 201, 211);
+        text-align: left;
+        padding: 1em;
+    }
+
+    .project_inspo2 {
+        background-color:rgb(228, 190, 203);
+        text-align: left;
+        padding: 1em;
+    }
+
+    #myChart{
+    width: 50%; 
+    float: left; 
+
+}
+
+    #myChart2{
+    width: 50%;
+    float: right;
+}
+
+</style> 
+<body>
+    <div class = "heading">
+        <b><font size = "+4" font color = "white">An Exploration of Literacy </font>
+    </b>
+    <hr>
+    <div class = "button_bar">
+        <a style="text-decoration:none" href="Proj1.html">
+            <button div class = "heading_button">Homepage</button>
+        </a>
+        <a style = "text-decoration:none" href="literacy.html">
+            <button div class = "heading_button">Explore World Literacy</button>
+        </a>
+        <a style = "text-decoration:none" href = "goodreads.html">
+            <button div class = "heading_button"> Explore Goodreads Reviews </button>
+        </a>
+        <a style = "text-decoration:none" href = "aboutpage.html">
+            <button div class = "heading_button"> About the Project </button>
+        </a>
+    </div>
+
+    <div class = "introduction">
+        <img class = "bookshelf" src="images/open_book.png" alt = "Bookshelf">
+        <a class = 'body_text'>
+            <b><font size = "+2" font color = "#365859"><br>Project Mission:</font></b><br><br> In an effort to examine literacy and reading preferences in the age of social media, this project examines
+            two datasets, global literacy rates and Goodreads book ratings. I do not aim to determine why literacy rates around the world are
+            the way they are, but rather examine the "pipeline" of reading, from literacy all the way to reading preferences. My more humanistic goal is to explore why someone loves a book
+            they read! 
+
+            <br><br><br><br>
+            <b><font size = "+1" font color = "#365859">I examine literacy under two lenses: geographic region and gender. The two questions I aim to answer are:</font></b> <br><br>
+            1. How does literacy rates by gender vary country to country and state to state in the United States? Is there a connection between 
+            total literacy and literacy among male and female populations in the countries with the lowest literacy rates?
+            <br><br>
+            2. Do literacy rates tend to improve as time goes on?
+            <br><br><br>
+            <b><font size = "+1" font color = "#365859">Using varous attributes of books and their Goodreads' ratings, I aim to answer:</font></b>
+            <br><br>
+            1. Is there a specific genre that people tend to rate higher and thus enjoy more?
+            <br><br>
+            2. What kinds of books are people rating on Goodreads? Are there trends in genre, publication year, etc.?
+            <br><br>
+            3. Do more awards or the language of the book correlate to a higher average rating?
+            <br><br>
+            4. Are there trends in the average ratings of books based on its genre or number of awards?<br>
+
+        </a>
+    </div>
+    <hr>
+    <div class = 'project_inspo'>
+        <a class = "body_text">
+            <b><font size = "+2" font color = "#365859"><br>Project Inspiration:</font></b>
+            <b>Goodreads User Demographics</b>
+            <br><br> 
+            <i> What is Goodreads?</i>
+            <br><br>
+            Goodreads is a social media website that allows for users to explore and rate (text and numerical ratings, out of 5 stars)
+            books of all languages, genres, and publication years. <font color = "#365859"><i>It has 45 million users worldwide.</i></font><br><br>
+
+
+<canvas id="myChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Goodreads Users by Country',
+                color: '#141414'}}},
+    data: {
+      labels: ['United States', 'India', 'United Kingdom', 'Canada', 'Australia', 'Indonesia', 'China', 'Germany', 'Malaysia','Other'],
+      datasets: [{
+        label: 'Percentage of Usership',
+        data: [42.7,8.44,6.89,5.11,3.11,2.44,1.4,1.39,0.93,27.6],
+        backgroundColor: [
+          '#58508D',
+          '#A45B97',
+          '#E26C8B',
+          '#FF8F75',
+          '#FFC164',
+          '#F9F871',
+          '#88B04E',
+          '#00AE8B',
+          '#A73659',
+          '#cccccc'
+        ],
+        borderColor: [
+        '#141414'
+        ],
+        borderWidth: 1.5
+    }],
+    },
+    
+    plugins: {
+      datalabels: {
+        display: true,
+        backgroundColor: '#ccc',
+        borderRadius: 3,
+        font: {
+          color: 'red',
+          weight: 'bold',
+        },
+      },
+      doughnutlabel: {
+        labels: [
+          {
+            text: '550',
+            font: {
+              size: 20,
+              weight: 'bold',
+            },
+          },
+          {
+            text: 'total',
+          },
+        ],
+    
+            }},
+        
+    });
+
+  function resize() {
+            myChart.resize(600, 450);
+        };
+        resize();
+</script>
+
+<canvas id="myChart2"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var myChart2 = new Chart(ctx, {
+    type: 'bar',
+    options: {
+        plugins: {
+            legend: { display: false},
+            title: {
+                display: true,
+                text: 'Percent Goodreads Users by Age Group',
+                color: '#141414'}}},
+    data: {
+      labels: ['18-24', '25-34','35-44','45-54','55-64','65+'],
+      datasets: [{
+        label: 'Percentage of Usership',
+        data: [22.29,30.96,18.76,13.41,8.91,5.67],
+        backgroundColor: [
+          '#ffa602',
+          '#ff6362',
+          '#bc5090',
+          '#58508d',
+          '#50868d',
+          '#fa511e'
+        ],
+        borderColor: [
+        '#141414'
+        ],
+        borderWidth: 1.5
+    }],
+    },
+    
+    plugins: {
+      datalabels: {
+        display: true,
+        backgroundColor: '#ccc',
+        borderRadius: 3,
+        font: {
+          color: 'red',
+          weight: 'bold',
+        },
+      },
+      doughnutlabel: {
+        labels: [
+          {
+            text: '550',
+            font: {
+              size: 20,
+              weight: 'bold',
+            },
+          },
+          {
+            text: 'total',
+          },
+        ],
+    
+            }},
+        
+    });
+
+  function resize() {
+            myChart2.resize(600, 450);
+        };
+        resize();
+</script>
+            <br><br>
+            Goodreads user demographics provide the framework for my analysis of both literacy and Goodreads ratings. The largest two age groups of Goodreads users are 18-24 and 25-34 year olds. Thus, I chose to further examine literacy for people aged 15+. As shown, the majority of Goodreads users are from the United States,
+            but there are citizens of many other countries using Goodreads. Therefore, I did not wish to limit my analysis to only the United States and English books. 
+            Rather, I look at world-wide literacy and books from other languages, in addition to literacy within the United States. <br><br><br> Moreover <b>61.07%</b> of Goodreads users are female, so I chose to examine literacy under the lens of gender. <br><br>
+        </a>
+    </div>
+    <hr>
+    <div class = "project_inspo2">
+        <br><br>
+        <b><font size = "+2" font color = "#365859">About the Data and Visualizations:</font></b><br><br>
+        <b><font size = "+1">Literacy Rates: </font></b> The data used for world literacy was found on Kaggle, and required little cleaning, 
+            which was done all in Python. The dimensions of data included for each country was female literacy rate, male literacy rate, and 
+            total population literacy rate for the years 2010-2018 (not every country had data for each year). Moreover, the same dimensions 
+            were available per age group within the country's population: 15+, 15-24, 25-64, and 65+.
+
+            This dataset did not include any data on United States literacy, however. While searching for information on the United States, 
+            I found little useable data, especially for the years 2010-2018. Therefore, I needed to compile my data from an alternative source 
+            and create my own database. I found 2023 United States literacy rates per state on "wisevoter," which is a website aimed at providing 
+            up-to-date data regarding United States policy concerns. I have provided the website below: <br><br>
+            <a href="https://wisevoter.com/state-rankings/literacy-rate-by-state/ ">Wisevoter: U.S. Literacy</a>
+            <br><br><hr>
+        <b><font size = "+1">Goodreads: </font></b> This Kaggle dataset was comprehensive, including information on over 50,000 books and their ratings scraped from Goodreads. 
+            It includes primarily English books, but also some from various other languages. The dimensions of data for each book are extensive, but the ones most relevant to 
+            my analysis are numerical rating, genre, year of publication, language, and awards. The data, however, had to be cleaned significantly to remove measurement formatting 
+            errors and thus make it usable for analysis. I used Microsoft Excel and Python to do so. Additionally, I created two new columns, one that measured the number of awards 
+            and another that separated the primary genre from a list of all genres. 
+            <br><br> The Goodreads user demographic information was found on two sources that I have linked below: <br><br>
+            <b> Age Demographics: </b><a href = "https://www.similarweb.com/website/goodreads.com/#interests ">Data</a><br>
+            <b>Country Data:</b> </Country><a href = https://www.goodreads.com/author_blog_posts/14538341-who-is-the-average-goodreads-user-you-ll-be-surprised> Data </a>
+            <br><br><hr>
+            <b><font size = "+1">Visualizations:</font></b> I created all data visualizations using Python, Tableau, and JavaScript's Chart.js package.<br><br>
+            
+        </div>
+</body>
