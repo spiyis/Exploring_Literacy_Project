@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css_proj.css">
+    <title>Goodreads Reviews</title>
+</head>
+<style>
+
+    body {
+        border: double transparent 1.5em;
+        border-image: url(bookbord3.jpg) 200 round;
+        padding: 0.5em;
+
+    }
+    
+
+    .heading {
+        background-image: url("vinshelf.png");
+        padding: 2em;
+        text-align: center;
+    }
+
+    .heading_button {
+        background-color: rgb(163, 179, 169);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 18px;
+    }
+
+    .button_bar {
+        display: inline-block;
+        padding-top: 0em;
+        padding-bottom: 0.5em;
+        
+
+    }
+
+    .line {
+        border-bottom: 2px solid #276548;
+    }
+
+    .question {
+        background-color:rgb(234, 217, 218);
+        padding: 1em;
+        padding-left: 2.5em;
+        text-align: center;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+    }   
+
+    .center_large {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }  
+    
+
+    .center_small {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        height: 20%;
+    }
+
+    .left {
+        display: block;
+        margin-left: 2%;
+        margin-right: auto;
+        width: 75%;  
+    }
+
+    .genre {
+        background-color: rgb(233, 204, 206);
+        padding: 2em;
+        text-align: left;
+    }
+
+    .hex {
+        background-color: rgb(235, 192, 195);
+        padding: 2em;
+        text-align: center;
+        display: flex;
+    }
+
+    .hex_plot {
+        height: auto;
+        width: 500px;
+        padding-right: 0.5em;
+    }
+
+    .rate {
+        background-color:rgb(234, 217, 218);
+        padding: 1em;
+        text-align: left;
+    }
+
+    .rate2 {
+        background-color:rgb(234, 217, 218);
+        padding: 1em;
+        text-align: left;
+        display: flex;
+    }
+
+    .lang {
+        background-color: rgb(235, 192, 195);
+        padding: 1em;
+        text-align: left;
+    }
+
+    .wordcloud {
+        height: auto;
+        width: 550px;
+        padding-right: 0.5em;
+    }
+    
+    .chart {
+        background-color:rgb(234, 217, 218);
+        padding: 1em;
+        text-align: left;
+    }
+
+    .fantasy {
+        background-color: rgb(233, 204, 206);
+        padding: 1em;
+        text-align: left; 
+    }
+
+    .bookshelf {
+        width: 160px;
+        height: auto;    
+        margin: 0 15px 0 0;
+        padding-left: 1em;
+        
+        }
+
+    .conclusions {
+        background-color: rgb(191, 207, 197);
+        text-align: left;
+        padding: 1em;
+        display: flex;
+    }
+
+    .slider {
+        overflow: hidden;
+        width: auto;
+        height: auto;
+        background-color:rgb(191, 207, 197);
+        }
+      
+    .slider img {
+        width: 10%;
+        height: auto;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        }
+      
+    .slider img.active {
+        opacity: 1;
+        }
+
+    .random {
+        background-color:rgb(191, 207, 197);
+        padding-bottom: 2em; 
+        padding-top: 2em;
+    }
+
+</style>
+
+<body>
+    <div class = "heading">
+        <b><font size = "+3" font color = "white">Goodreads Reviews </font>
+    </b>
+    <hr>
+    <div class = "button_bar">
+        <a style="text-decoration:none" href="index.html">
+            <button div class = "heading_button">Homepage</button>
+        </a>
+        <a style = "text-decoration:none" href="literacy.html">
+            <button div class = "heading_button">Explore World Literacy</button>
+        </a>
+        <a style = "text-decoration:none" href = "goodreads.html">
+            <button div class = "heading_button"> Explore Goodreads Reviews </button>
+        </a>
+        <a style = "text-decoration:none" href = "aboutpage.html">
+            <button div class = "heading_button"> About the Project </button>
+        </a>
+    </div>
+    <div class = 'question'>
+        <i>What makes a book "good?" Are there attributes of a book that make it more likely to be highly rated by its readers?</i>
+    </div>
+    <hr>
+    <div class = 'genre'>
+            Fiction, Fantasy, Romance, Young Adult, and Mystery are the most rated genres. While most books can fall under more than one genre, I examine the primary genre for each book (i.e. it's the genre that best summarizes the book, per Goodreads). While the genres with the most ratings are not the most highly rated, the genres that have the highest
+            ratings often do not have very many ratings. Therefore, one or two ratings can skew the average rating.<br><br>
+        <div class='center_small' id='viz1714486961904' style='position: relative'><noscript><a href='#'><img alt='The genres with the most ratings are not the most highly rated. ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;Genre_Bubble&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BooksData2&#47;Genre_Bubble' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;Genre_Bubble&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /><param name='increment_view_count' value='no' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714486961904');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <hr>
+    <div class = 'hex'>
+        <img class = "hex_plot" src="rating_hex.png" alt = "Goodreads Rating Hex Plot">
+        <br><br><br><br><br>The number of awards a book has does not indicate much about how highly rated the book will be. Take a look at 
+        the darker oranges at the bottom of the graph: books with 0-1 awards are rated both above and below a 4.0. Moreover, 
+        books with more awards are also found both above and below a 4.0 rating.
+    </div>
+    <hr>
+    <div class = "rate">
+        The books with the most awards have at least a 3.5 Goodreads rating, but more rewards do not always indicate a higher rating relative to books with the same number of awards. Take Holes versus The Giver: they both have 22 awards, but one is rated a 3.97 and another is 4.13. 
+        <div class='center_large' id='viz1714492404003' style='position: relative'><noscript><a href='https:&#47;&#47;1369402617-atari-embeds.googleusercontent.com&#47;'><img alt='Book Spotlight: Books with the Most Awards ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;Most_Awards&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BooksData2&#47;Most_Awards' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;Most_Awards&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /><param name='increment_view_count' value='no' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714492404003');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <hr>
+    <div class = "lang">
+        <div class='left' id='viz1714493131671' style='position: relative'><noscript><a href='https:&#47;&#47;1369402617-atari-embeds.googleusercontent.com&#47;'><img alt='Four languages have books with an average rating of 5.0: French (Middle, ca. 1400-1600), Iranian, Maltese, and Norwegian Nynorsk. ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;Rating_Language&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BooksData2&#47;Rating_Language' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;Rating_Language&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /><param name='increment_view_count' value='no' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714493131671');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <br></rb>While French (Middle, ca. 1400-1600), Iranian, Maltese, and Norwegian books may have the highest average ratings, it is important to note that each language has under 10 books total listed for that language. Therefore, the ratings are heavily skewed depending upon what the ratings for those few books are. On the other hand, English, French, and Spanish books make up the most books on Goodreads, so their average rating is more representative of the books as a whole.</font>
+        <br><br>
+        <font color = "#365859"><i>When comparing English, French, and Spanish books, English books come up on top with an average rating of 4.019.</i></font>
+    </div>
+    <hr>
+    <div class = 'rate'>
+        <font color = '#365859' size = "+2">English Books with a 4.5+ Rating: Plot Descriptions</font>   
+    </div>
+    <div class = 'rate2'>
+        <img class = "wordcloud" src="wordcloud.png" alt = "Reviews Wordcloud">
+        Goodreads provides descriptions of a book's plot. When examining those descriptions for books with the highest ratings, 4.5+, the most common words to appear are "life," 
+        "one," "world," "love," and "find." This may point to themes that people find most enjoyable, such as life and love.<br><br>
+        Words not included in the word cloud are English stop words (words such as "the," "you," "about," "will" etc). I also chose to remove the word "book" as the word was used to
+        introduce the books in question, rather than as a part of the actual description of the plot.<br><br>When comparing English, French, and Spanish books, English books come up on top with an average rating of 4.019.
+    </div>
+    <hr>
+    <div class = "chart">
+        <div class='center_small' id='viz1714689162591' style='position: relative'><noscript><a href='https:&#47;&#47;963061375-atari-embeds.googleusercontent.com&#47;'><img alt='Fantasy books published in 2006 are the most rated on Goodreads. ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;YearNumRatings&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BooksData2&#47;YearNumRatings' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;YearNumRatings&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /><param name='increment_view_count' value='no' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714689162591');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <br>When examining the genres with the most ratings, fantasy, fiction, & romance, it becomes clear that fantasy is almost always dominating Goodreads' total rating numbers for the books published each year. This means that people are responding most (whether good or bad) to fantasy books by rating on Goodreads. <br><br>
+        <font color = "#365859"><i>Fantasy books published in 2006 overwhelmingly had the most ratings published on Goodreads, so let's do a deep dive into those books... </i></font><br><br>
+        <div class='center_small' id='viz1714689436316' style='position: relative'><noscript><a href='https:&#47;&#47;963061375-atari-embeds.googleusercontent.com&#47;'><img alt='Fantasy Books Published in 2006 with 100,000+ Ratings ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;2006_FantasyBooks&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BooksData2&#47;2006_FantasyBooks' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BooksData2&#47;2006_FantasyBooks&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /><param name='increment_view_count' value='no' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1714689436316');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <br>Two extremely popular fantasy books were published in 2006: <i>The Lightning Thief</i> and <i>Harry Potter and the Half-Blood Prince.</i> These books had a huge rating response from readers, therefore explaining the peak in the graph above. Moreover, both have an average rating above 4.0, thus they remain overall popular with audiences, even though so many people rated them. 
+    </div>
+    <hr>
+    <div class = 'conclusions'>
+        <br><font size = "+2"><b>Overall Conclusions:</b></font><br><br>
+    </div>
+    <div class = 'conclusions'>
+        <img class = "bookshelf" src="open_book.png" alt = "Bookshelf">
+        <ul>
+        <li>Fiction, Fantasy, Romance, Young Adult, and Mystery are the most rated genres, though they are not the most highly rated. This is likely due to the total number of reviews these genres receive, as the variation in ratings creates an average rating more representative of the genre as a whole. Manga, for example, is a highly rated genre, but has under 1,000 ratings total. Therefore, the average rating is not as representative of the total readership's sentiment toward the genre.</li><br>
+        <li>The number of awards a book receives does not have a clear correlation to the average rating of the book. Books with little to no awards can still be loved by its readers!</li>
+        
+    </ul>
+    </div>
+    <div class = 'conclusions'>
+        <ul>
+        <li>English, French, and Spanish books are the most rated on Goodreads, with English being the most highly rated out of the three. The languages that have a 5.0 rating likely have such a high rating due to the smaller number of total reviews those books receive.</li>
+        <li>English books that cover themes of life, love, and the world are among the most highly rated books on Goodreads.</li><br>
+        <li>Fantasy books are the most rated on Goodreads, with those published in 2006 dominating the reviews for books published that year. </li>
+        </ul>
+    </div>
+    <hr>
+    
+    <div class = 'conclusions'>
+        <br><font size = "+2"><b>What book should I read next? </b></font>
+    </div>
+    
+    <div class = 'conclusions'>
+        <ul>
+        <li>Give a book with fewer awards a chance! There are books loved by readers that don't have any awards.</li><br>
+
+        <li>Fantasy books are hugely popular. Take a look at the list of those published in 2006 for some inspiration.</li><br>
+
+        <li>Books with universal themes of love and life draw a large readership that on average enjoy the book they read. The plot descriptions reveal more than what meets the eye!</li><br>
+        </ul>
+    </div>
+    <div class= 'slider'>
+        <img src="reach.jpeg" alt = 'When You Reach Me'>
+        <img src="dead_beat.jpg" alt = 'Dead Beat'>
+        <img src="holes.jpg" alt = 'Holes'>
+        <img src="stardust.jpg" alt = 'Stardust'>
+        <img src = "secret_history.jpg" alt = 'The Secret History'>
+        <img src = "lightning.jpg" alt = 'The Lightning Thief'>
+        <img src = "wonder.jpg" alt = 'Wonder'>
+    </div>
+        <script>
+        var images = document.querySelectorAll('.slider img');
+        var currentImage = 0;
+      
+        setInterval(function() {
+          images[currentImage].classList.remove('active');
+          currentImage = (currentImage + 1) % images.length;
+          images[currentImage].classList.add('active');
+        }, 2000);
+      </script>
+
+    <div class = 'random'>
+        <br><font size = "+0.5"><b><i>Indecisive?</i> Click here for a random book recommendation:</b></font>
+    <button type="randombook" onclick="randombook()">Random Book</button>
+    <input name="randombook" id="randombook">
+    </div>
+
+    <script>
+    var book = Array('"Dead Beat" by Jim Butcher', '"Holes" by Louis Sachar', '"Stardust" by Neil Gaiman', '"The Secret History" by Donna Tartt', '"The Lightning Thief" by Rick Riordan', '"Wonder" by R.J. Palacio', '"When You Reach Me" by Rebecca Stead');
+
+    function randombook() {
+    var randombook = book[Math.floor(Math.random() * book.length)];
+    document.getElementById('randombook').value = randombook;
+    }
+</script>
+    

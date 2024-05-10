@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css_proj.css">
+    <title>About</title>
+</head>
+
+<style>
+
+    body {
+        border: double transparent 1.5em;
+        border-image: url(bookbord3.jpg) 200 round;
+        padding: 0.5em;
+
+    }
+    .bookshelf {
+        width: 150px;
+        height: auto;
+        float: left;    
+        margin: 0 15px 0 0;
+        padding-left: 1em;
+        padding-top: 1em;
+        }
+    
+
+    .heading {
+        background-image: url("vinshelf.png");
+        padding: 2em;
+        text-align: center;
+    }
+
+    
+    .heading_button {
+        background-color: rgb(163, 179, 169);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 18px;
+    }
+
+    .button_bar {
+        display: inline-block;
+        padding-top: 0em;
+        padding-bottom: 0.5em;
+       
+
+    }
+
+    .line {
+        border-bottom: 2px solid #276548;
+    }
+    
+    .slider {
+        overflow: hidden;
+        width: auto;
+        height: auto;
+        background-color:rgb(233, 214, 229);
+        }
+      
+    .slider img {
+        width: 10%;
+        height: auto;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        }
+      
+    .slider img.active {
+        opacity: 1;
+        }
+
+    .proj {
+        background-color:rgb(233, 214, 229);
+        text-align: left;
+        padding: 1em;
+    }
+
+    .proj2 {
+        background-color:rgb(252, 218, 253);
+        text-align: left;
+        padding: 1em;
+        
+    }
+
+    #myChart2{
+    width: 50%; 
+    float: left; 
+
+}
+
+    #myChart3{
+    width: 50%;
+    float: right;
+}
+
+ 
+
+</style>
+<body>
+    <div class = "heading">
+        <b><font size = "+3" font color = "white">About the Project </font>
+    </b>
+    <hr>
+    <div class = "button_bar">
+        <a style="text-decoration:none" href="index.html">
+            <button div class = "heading_button">Homepage</button>
+        </a>
+        <a style = "text-decoration:none" href="literacy.html">
+            <button div class = "heading_button">Explore World Literacy</button>
+        </a>
+        <a style = "text-decoration:none" href = "goodreads.html">
+            <button div class = "heading_button"> Explore Goodreads Reviews </button>
+        </a>
+        <a style = "text-decoration:none" href = "aboutpage.html">
+            <button div class = "heading_button"> About the Project </button>
+        </a>
+    </div>
+    <div class= 'slider'>
+        <img src="reach.jpeg" alt = 'When You Reach Me'>
+        <img src="secret_history.jpg" alt = 'The Secret History'>
+        <img src="pride.jpg" alt = 'Pride & Prejudice'>
+        <img src="court.jpg" alt = 'A Court of Thornes & Roses'>
+        <img src = "frank.jpg" alt = 'Frankenstein'>
+        <img src = "green.jpg" alt = 'The Green Mile'>
+        <img src = "little.jpg" alt = 'Little Women'>
+    </div>
+    <script>
+        var images = document.querySelectorAll('.slider img');
+        var currentImage = 0;
+      
+        setInterval(function() {
+          images[currentImage].classList.remove('active');
+          currentImage = (currentImage + 1) % images.length;
+          images[currentImage].classList.add('active');
+        }, 2000);
+    </script>
+
+    <div class = 'proj'>
+        <br>This project is a continuation of a final projected I created in <b>DATA 303: Data Visualization</b> at William & Mary. The original project displayed visualizations created in Python and Tableau onto 
+        a Google Site. To expand my understanding of data visualization, I adapted my existing visualizations to fit onto my own webpage created using HTML, CSS, and Javascript. 
+        This webpage is the product of my independent study of the programming languages.<br><br>
+
+        I decided to delve into literacy and reading preferences, as the subject is of personal importance to me. I have always been an avid reader; I spent much of my childhood curled up with my cat, reading a good book (always fiction!).
+        While studying Data Science at William & Mary, I found myself missing fiction, and moreover missing having the time to read! I also learned that I have a passion for literacy, especially in regards to equal access to education, both in the United States and abroad.
+        I believe data visualization can be a powerful tool for education, showcasing complex information in a comprehnsive and digestible manner.
+        Finding a way to blend my love of literature and my learning in Data Science has been the highlight of my work on this project.
+        <br><br><font size = "+0.5" color ="#365859">Above you see just <i>some</i> of my favorite books. They serve as the underlying inspiration behind this project, as my love for reading drove my initial exploration into the Goodreads app.</font>
+    </div>
+    <hr>
+    <div class = 'proj2'>
+        <canvas id="myChart2"></canvas>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          var ctx = document.getElementById('myChart2').getContext('2d');
+          var myChart2 = new Chart(ctx, {
+            type: 'polarArea',
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: { display: false},
+                    title: {
+                        display: true,
+                        text: 'Time Spent Reading for Pleasure This Semester',
+                        color: '#141414'}}},
+            data: {
+              labels: ['Janurary', 'February','March','April','May'],
+              datasets: [{
+                label: 'Hours Spent Reading',
+                data: [3,4.5,40,32.5,6],
+                backgroundColor: [
+                  '#866CB3',
+                  '#00C9A3',
+                  '#f77e63',
+                  '#AC6293',
+                  '#D3467A'
+                ],
+                borderColor: [
+                '#141414'
+                ],
+                borderWidth: 1.5
+            }],
+            },
+            
+            plugins: {
+              datalabels: {
+                display: true,
+                backgroundColor: '#ccc',
+                borderRadius: 3,
+                font: {
+                  color: 'red',
+                  weight: 'bold',
+                },
+              },
+              doughnutlabel: {
+                labels: [
+                  {
+                    text: '550',
+                    font: {
+                      size: 20,
+                      weight: 'bold',
+                    },
+                  },
+                  {
+                    text: 'total',
+                  },
+                ],
+            
+                    }},
+                
+            });
+        
+          function resize() {
+                    myChart2.resize(600, 450);
+                };
+                resize();
+        </script> 
+    
+        <canvas id="myChart"></canvas>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart3 = new Chart(ctx, {
+            type: 'bar',
+            options: {
+                responsive: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        ticks: {
+                            autoSkip: true,
+                            maxTicksLimit: 20
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false},
+                    title: {
+                        display: true,
+                        text: 'Books I Read & My Rating',
+                        color: '#141414'}}},
+            data: {
+              labels: ['"House of Earth & Blood', '"House of Sky & Breath"','"House of Flame & Shadow"','"Lessons in Chemistry"','"The Troop"'],
+              datasets: [{
+                label: 'Rating',
+                data: [4.0, 4.8, 3.8, 5, 4.6],
+                backgroundColor: [
+                  '#C6D8FF',
+                  '#71A9F7',
+                  '#6B5CA5',
+                  '#72195A',
+                  '#4C1036'
+                ],
+                borderColor: [
+                '#141414'
+                ],
+                borderWidth: 1.5
+            }],
+            },
+            
+            plugins: {
+              datalabels: {
+                display: true,
+                backgroundColor: '#ccc',
+                borderRadius: 3,
+                font: {
+                  color: 'red',
+                  weight: 'bold',
+                },
+              },
+              doughnutlabel: {
+                labels: [
+                  {
+                    text: '550',
+                    font: {
+                      size: 20,
+                      weight: 'bold',
+                    },
+                  },
+                  {
+                    text: 'total',
+                  },
+                ],
+            
+                    }},
+                
+            });
+        
+          function resize() {
+                    myChart3.resize(500,600);
+                };
+                resize();
+        </script>
+        
+        <br><br>While completing this project, I decided to track just how much I was reading. For the months I worked
+            on the project (January 2024-May 2024), my reading time flunctuated greatly. I found that I read much more when I started a new series, as I did not stop reading until I completed it. 
+            Once I finished the three-book series, <i>Crescent City</i> by Sarah J. Maas, my reading time went back down, but never as far as when I started tracking in Janurary. 
+            Oftentimes, my desire to start reading again is kickstarted by a good book!<br><br>
+    </div>
